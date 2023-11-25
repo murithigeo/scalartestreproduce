@@ -1,0 +1,29 @@
+openapi: 3.0.3
+info:
+  version: 1.0_scalar_CORS_test
+  title: test
+servers:
+  - url: 'http://localhost/v1'
+paths:
+  /api:
+    x-exegesis-controller: jsonController
+    get:
+      x-exegesis-operationId: apiDef
+      parameters:
+        - in: query
+          name: f
+          required: false
+          schema:
+            type: string
+            enum:
+              - json
+              - html
+      responses:
+        '200':
+          description: Ok.
+          content:
+            application/vnd.oai.openapi+json;version=3.0:
+              type: string
+            text/html:
+              schema:
+                type: string
