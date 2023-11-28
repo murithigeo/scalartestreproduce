@@ -9,8 +9,7 @@ exports.apiDef = async function apiDef(context) {
         const Doc = YAML.parse(fs.readFileSync('./apidefinition.yaml', 'utf8'));
         context.res
             .status(200)
-            .set('Access-Control-Allow-Origin', '*')
-            .set('content-type', 'application/vnd.oai.openapi+json;version=3.0')
+            .set('content-type','application/json')
             .setBody(Doc);
     } else if (f == 'html') {
         //console.log(Def);
@@ -52,7 +51,6 @@ exports.apiDef = async function apiDef(context) {
                */
         context.res
             .status(200)
-            .set('Access-Control-Allow-Origin', '*')
             .set('content-type', 'text/html')
             .setBody(scalarCode);
 

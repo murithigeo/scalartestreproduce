@@ -37,7 +37,7 @@ async function createServer() {
 }
 createServer().then(server => {
     server.listen(80, 'localhost');
-    console.log('Access Scalardocs at: http://localhost:80/api?f=html')
+    console.log('Access Scalardocs at: http://localhost:80/v1/api?f=html')
 })
     .catch(err => {
         console.error(err.stack);
